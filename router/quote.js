@@ -16,6 +16,7 @@ function getQuote(startPort, endPort, containerType, quantity) {
         const unitPrice = parseFloat(quote.price.replace(/[^0-9.]/g, '')); // Convertir el precio a número
         const currency = quote.price.replace(/[0-9.,\s]/g, ''); // Extraer la moneda (USD, EUR, etc.)
         const totalPrice = unitPrice * quantity; // Calcular el precio total
+
         return `Empresa: ${quote.business},\nPrecio Unitario: ${quote.price},\nCantidad: ${quantity},\nPrecio Total: ${currency} ${totalPrice.toFixed(2)}`;
     }).join('\n\n');
 }
